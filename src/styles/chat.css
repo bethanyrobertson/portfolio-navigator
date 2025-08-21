@@ -1,0 +1,1040 @@
+/* Chat Interface Styles */
+
+/* Custom scrollbar for thumbnail carousel */
+.portfolio-display .overflow-x-auto::-webkit-scrollbar {
+  height: 8px;
+}
+
+.portfolio-display .overflow-x-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.portfolio-display .overflow-x-auto::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+}
+
+.portfolio-display .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.chat-interface {
+  max-width: 800px;
+  margin: 0 auto;
+  height: 600px; /* Fixed height instead of 100% */
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #001214;
+  box-shadow: none;
+  /* Fixed height for consistent sizing */
+  min-height: 600px;
+  max-height: 600px;
+  /* Prevent any expansion */
+  flex-shrink: 0;
+  flex-grow: 0;
+  /* Force monospace for all text */
+  font-family: 'GeistMonoVF', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+/* Mobile responsive margins */
+@media (max-width: 768px) {
+  .chat-interface {
+    margin: 16px;
+    max-width: calc(100% - 32px);
+  }
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #002226;
+  border-bottom: 1px solid rgb(229 231 235 / 15%);
+  position: relative;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.avatar-container svg {
+  width: 36px;
+  height: 36px;
+}
+
+.chat-title {
+  color: #b4d5da;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    /* Ensure smooth scrolling and proper scroll behavior */
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+    scroll-padding-bottom: 20px;
+    /* Prevent expansion beyond container */
+    max-height: calc(100% - 120px); /* Account for header and input area */
+  }
+
+  /* Custom scrollbar styling */
+  .chat-messages::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .chat-messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  .chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+  }
+
+  .chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Even smaller font size for mobile agent responses */
+  .assistant-message .message-content {
+    font-size: 13px;
+  }
+
+/* Ensure proper spacing for messages */
+.message {
+  margin-bottom: 20px;
+  scroll-margin-top: 20px; /* Add scroll margin for better positioning */
+}
+
+.assistant-message {
+  background: transparent;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.chat-interface .user-message {
+  background: #b4d5da;
+  color: #002226;
+  padding: 8px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  max-width: 300px;
+  margin-left: auto;
+  text-align: right;
+  font-weight: 500;
+  font-family: 'GeistMonoVF', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+/* Override message-content styles for user messages */
+.chat-interface .user-message .message-content {
+  line-height: 1.2 !important;
+  margin-bottom: 0 !important;
+  white-space: pre-line;
+  font-family: 'GeistMonoVF', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  font-size: 14px !important;
+}
+
+.message-content {
+  white-space: pre-line;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* Bullet point and list styling */
+.message-content ul,
+.message-content ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.message-content li {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+/* Custom bullet points for lines starting with • */
+.message-content:has(br) {
+  line-height: 1.8;
+}
+
+/* Ensure proper spacing between paragraphs */
+.message-content p {
+  margin: 12px 0;
+}
+
+/* Enhanced spacing for formatted content */
+.assistant-message .message-content {
+  white-space: pre-line;
+  line-height: 1.7;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px; /* Smaller font size for agent responses */
+}
+
+/* Contact information component styling */
+.contact-info {
+  background: #1E1E1E;
+  border: 1px solid rgb(229 231 235 / 15%);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.contact-header h4 {
+  color: #b4d5da;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  font-family: 'GeistMonoVF', monospace;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.contact-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b4d5da;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  flex: 1;
+}
+
+.contact-action-btn {
+  min-width: 80px;
+  height: 36px; /* Match other buttons */
+  font-size: 12px;
+  padding: 6px 12px;
+  flex-shrink: 0;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  background: transparent;
+  border: 1px solid #cdcbff;
+  color: #cdcbff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-action-btn:hover {
+  background: #D0BCFF !important;
+  color: #012b31 !important;
+  border-color: #D0BCFF !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(208, 188, 255, 0.3) !important;
+}
+
+.contact-action-btn span {
+  font-size: 12px;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+/* Enhanced spacing for bullet points and lists */
+.message-content:not(:empty) {
+  position: relative;
+}
+
+/* Ensure proper spacing between different types of content */
+.assistant-message .message-content br + br {
+  margin-top: 8px;
+}
+
+/* Style bullet points and lists */
+.message-content {
+  /* Ensure proper spacing for formatted content */
+  line-height: 1.7;
+}
+
+/* Better spacing for lines with bullet points */
+.message-content:has(br) {
+  line-height: 1.8;
+}
+
+/* Ensure proper spacing between paragraphs */
+.message-content p {
+  margin: 12px 0;
+}
+
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  align-items: center; /* Ensure buttons are aligned */
+}
+
+/* Combined container for input and buttons */
+.chat-input-and-buttons-container {
+  background: #002226;
+  border-radius: 0 0 24px 24px;
+  border-top: 1px solid rgb(229 231 235 / 15%);
+}
+
+/* Main menu buttons should stay in a single row */
+.main-menu-buttons {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  padding: 8px 0 12px 24px; /* Top, right, bottom, left padding around buttons */
+  margin-bottom: 16px; /* Reduced bottom margin for the interface */
+  background: transparent; /* Transparent since parent has background */
+  border-radius: 12px; /* Rounded corners to match input */
+  margin-top: 8px; /* Small gap above buttons */
+}
+
+/* Ensure button text stays on one line */
+.main-menu-buttons .btn {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  min-width: fit-content !important;
+}
+
+/* Chat-specific button styles - must override globals.css */
+.chat-interface .btn,
+.chat-modal-content .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 12px !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(218, 196, 225, 0.7) !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  transition: all 0.2s !important;
+  font-size: 12px !important;
+  background: #DAC4E1 !important;
+  color: #012b31 !important;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  width: fit-content !important;
+  height: 36px !important; /* Fixed height for all buttons */
+  min-height: 36px !important; /* Ensure minimum height is also set */
+  max-height: 36px !important; /* Ensure maximum height is also set */
+}
+
+.chat-interface .btn:hover,
+.chat-modal-content .btn:hover {
+  background: #DAC4E1 !important;
+  color: #012b31 !important;
+}
+
+.button-text {
+  flex: 1;
+  text-align: left;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  font-size: 11px;
+}
+
+.external-icon {
+  opacity: 0.7;
+}
+
+.chat-interface .btn-primary,
+.chat-modal-content .btn-primary {
+  background: #DAC4E1 !important;
+  border: 1px solid #DAC4E1 !important;
+  color: #012b31 !important;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  height: 36px !important; /* Fixed height */
+  border-radius: 9999px !important;
+}
+
+.chat-interface .btn-primary:hover,
+.chat-modal-content .btn-primary:hover {
+  background: #94A24A !important;
+  color: #012b31 !important;
+  border-color: #94A24A !important;
+}
+
+.chat-interface .btn-secondary,
+.chat-modal-content .btn-secondary {
+  background: transparent !important;
+  border: 1px solid rgba(208, 188, 255, 0.7) !important;
+  color: #D0BCFF !important;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  height: 36px !important; /* Fixed height */
+  border-radius: 9999px !important;
+}
+
+.chat-interface .btn-secondary:hover,
+.chat-modal-content .btn-secondary:hover {
+  background: #DAC4E1 !important;
+  color: #012b31 !important;
+  border-color: #DAC4E1 !important;
+}
+
+.chat-interface .btn-outline,
+.chat-modal-content .btn-outline {
+  background: transparent !important;
+  border: 1px solid rgba(208, 188, 255, 0.7) !important;
+  color: #D0BCFF !important;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  height: 36px !important; /* Fixed height */
+  border-radius: 9999px !important;
+}
+
+.btn-outline:hover {
+  background: #DAC4E1 !important;
+  color: #012b31 !important;
+  border-color: #DAC4E1 !important;
+}
+
+/* Ensure all button text uses monospace font */
+.chat-interface .btn *,
+.chat-modal-content .btn * {
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+/* More about this interface link styling */
+.more-about-link {
+  color: #DAC4E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 12px !important;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+.more-about-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+/* Ensure variant buttons override base button styles on hover */
+.chat-interface .btn.btn-secondary:hover,
+.chat-interface .btn.btn-outline:hover,
+.chat-modal-content .btn.btn-secondary:hover,
+.chat-modal-content .btn.btn-outline:hover {
+  background: #DAC4E1 !important;
+  color: #012b31 !important;
+  border-color: #DAC4E1 !important;
+}
+
+.chat-interface .btn span,
+.chat-modal-content .btn span {
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+/* Universal button font rule */
+button {
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+/* Force monospace for ALL text in chat interface with maximum specificity */
+.chat-interface,
+.chat-interface *,
+.chat-interface .user-message,
+.chat-interface .user-message *,
+.chat-interface .assistant-message,
+.chat-interface .assistant-message *,
+.chat-interface .message-content,
+.chat-interface .message-content *,
+.chat-interface .chat-header,
+.chat-interface .chat-header *,
+.chat-interface .chat-input,
+.chat-interface .chat-input *,
+.chat-interface .chat-title,
+.chat-interface .more-about-link,
+.chat-interface .portfolio-display,
+.chat-interface .portfolio-display *,
+.chat-interface .contact-display,
+.chat-interface .contact-display *,
+.chat-interface .work-display,
+.chat-interface .work-display *,
+.chat-interface .resume-note,
+.chat-interface .thinking-animation,
+.chat-interface .thinking-animation * {
+  font-family: 'GeistMonoVF', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+/* Ensure any button-like elements also use monospace */
+[class*="btn"] {
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+/* More specific button font rules */
+.chat-interface .btn,
+.chat-interface button,
+.chat-interface .contact-action-btn {
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+.chat-interface .btn *,
+.chat-interface .btn span,
+.chat-interface .contact-action-btn *,
+.chat-interface .contact-action-btn span {
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+}
+
+.loading-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* color: #6b7280; */
+  /* font-style: italic; */
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; */
+}
+
+.loading-indicator .avatar-container {
+  position: relative;
+}
+
+.loading-indicator .avatar-container svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Thinking animation with bouncing dots - DISABLED for new implementation */
+.thinking-animation {
+  /* position: absolute; */
+  /* right: -40px; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  /* display: flex; */
+  /* gap: 4px; */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  min-height: 100px !important;
+}
+
+/* Make thinking text lighter */
+.thinking-animation .font-mono {
+  color: #8ca3af !important;
+}
+
+/* Portfolio display styling */
+.portfolio-display {
+  margin: 16px 0 8px 0;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Contact form styling */
+.contact-display {
+  margin: 16px 0 8px 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-info {
+  margin-bottom: 16px;
+}
+
+.contact-item {
+  margin-bottom: 8px;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.contact-item strong {
+  color: #DAC4E1;
+  margin-right: 8px;
+}
+
+.contact-note {
+  color: #9ca3af;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.contact-link {
+  color: #DAC4E1;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-link:hover {
+  color: #ffffff;
+  border-bottom-color: #DAC4E1;
+  text-decoration: none;
+}
+
+/* Resume download styling */
+.resume-display {
+  margin: 16px 0 8px 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.resume-download {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.resume-download-btn {
+  background: #DAC4E1;
+  color: #002226;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-mono), 'GeistMonoVF', 'GeistMono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+}
+
+.resume-download-btn:hover {
+  background: #94A24A;
+  border-color: #94A24A;
+}
+
+.resume-note {
+  color: #9ca3af;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Custom scrollbar for thumbnail carousel */
+.portfolio-display .overflow-x-auto::-webkit-scrollbar {
+  height: 8px;
+}
+
+.portfolio-display .overflow-x-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.portfolio-display .overflow-x-auto::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+}
+
+.portfolio-display .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: #012b31;
+  border-radius: 50%;
+  animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .button-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chat-interface {
+    height: 550px; /* Fixed height for mobile instead of 100% */
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 550px;
+    max-height: 550px;
+  }
+  
+  .chat-header {
+    padding: 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #002226;
+    border-bottom: 1px solid rgb(229 231 235 / 15%);
+  }
+  
+  .avatar-container svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .thinking-animation {
+    /* right: -32px; */
+  }
+  
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 0;
+  }
+} 
+
+/* Responsive design for contact info and chat input */
+@media (max-width: 640px) {
+  .contact-info {
+    padding: 12px;
+    margin-top: 8px;
+  }
+  
+  .contact-header h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-action-btn {
+    min-width: 70px;
+    height: 28px;
+    padding: 4px 8px;
+  }
+  
+  .contact-action-btn span {
+    font-size: 11px;
+  }
+  
+  .chat-input-container {
+    padding: 20px;
+    background: black;
+    border-top: 1px solid rgb(229 231 235 / 15%);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 0 0 24px 24px;
+  }
+  
+  .chat-input {
+    font-size: 16px;
+    padding: 16px 18px;
+    min-height: 56px;
+    border: 2px solid rgb(229 231 235 / 15%);
+    background: #1E1E1E;
+    color: #b4d5da;
+    border-radius: 12px;
+    flex: 1;
+  }
+  
+  .chat-input:focus {
+    border-color: #cdcbff;
+    box-shadow: 0 0 0 3px rgba(205, 203, 255, 0.3);
+  }
+  
+  .send-button {
+    width: 56px;
+    height: 56px;
+    border: 2px solid #cdcbff;
+    background: transparent;
+    color: #cdcbff;
+    border-radius: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .send-button:hover:not(:disabled) {
+    background: #cdcbff;
+    color: #012b31;
+  }
+} 
+
+/* Chat Input Form - Desktop styles */
+.chat-input-container {
+  padding: 20px;
+  background: transparent;
+  border-top: none;
+  display: flex;
+  align-items: center;
+}
+
+.chat-input-form {
+  width: 100%;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid rgb(229 231 235 / 15%);
+  border-radius: 12px;
+  background: #1E1E1E;
+  color: #b4d5da;
+  font-family: var(--font-mono), "GeistMonoVF", "SF Mono", monospace;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.chat-input::placeholder {
+  color: #6b7280;
+}
+
+.chat-input:focus {
+  border-color: #cdcbff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(205, 203, 255, 0.3);
+}
+
+.chat-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #cdcbff;
+  border-radius: 12px;
+  background: transparent;
+  color: #cdcbff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  font-family: var(--font-mono), "GeistMonoVF", "SF Mono", monospace;
+}
+
+.send-button:hover:not(:disabled) {
+  background: #cdcbff !important;
+  color: #012b31 !important;
+  border-color: #cdcbff !important;
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #1E1E1E;
+  color: #6b7280;
+  border-color: rgb(229 231 235 / 15%);
+}
+
+.send-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== CHAT MODAL STYLES (Consolidated from globals.css) ===== */
+
+.chat-modal-content {
+  background: transparent !important;
+}
+
+.chat-modal-overlay {
+  background: transparent !important;
+}
+
+.chat-modal-content * {
+  background-color: transparent !important;
+}
+
+/* Override for thinking animation in modal */
+.chat-modal-content .thinking-animation,
+.chat-modal-content .thinking-animation * {
+  background-color: transparent !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.chat-modal-content .chat-interface {
+  background: #001214 !important;
+}
+
+.chat-modal-content .chat-header {
+  background: #002226 !important;
+}
+
+.chat-modal-content .assistant-message {
+  background: #002226 !important;
+}
+
+.chat-modal-content .contact-info {
+  background: #1E1E1E !important;
+}
+
+.chat-modal-content .chat-input-container {
+  background: black !important;
+}
+
+.chat-modal-content .chat-input {
+  background: #1E1E1E !important;
+}
+
+/* Ensure thinking animation is visible in modal */
+.chat-modal-content .thinking-animation {
+  background-color: transparent !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  overflow: visible !important;
+}
+
+/* Ensure MotionGridDemo is visible in modal */
+.chat-modal-content .thinking-animation > div {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  overflow: visible !important;
+}
+
+/* Ensure all grid-related elements are visible in modal */
+.chat-modal-content [class*="grid"],
+.chat-modal-content [class*="motion"],
+.chat-modal-content [class*="cell"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.chat-modal-content {
+  border: none !important;
+  outline: none !important;
+}
+
+.chat-modal-content .chat-interface {
+  border: none !important;
+  outline: none !important;
+}
+
+.no-white-box {
+  background: transparent !important;
+}
+
+.no-white-box .chat-interface {
+  background: #001214 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* ===== CHAT SCROLLBAR STYLES (Consolidated from index.css) ===== */
+
+.chat-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+}
+
+/* ===== CHAT ANIMATION STYLES (Consolidated from index.css) ===== */
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animation for message appearance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-enter {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+} 

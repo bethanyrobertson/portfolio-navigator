@@ -1,0 +1,156 @@
+# =============================================================================
+# AI PORTFOLIO CHATBOT - ENVIRONMENT CONFIGURATION
+# =============================================================================
+# Copy this file to .env.local and fill in your actual values
+# NEVER commit .env.local to version control
+
+# =============================================================================
+# REQUIRED: OPENAI CONFIGURATION
+# =============================================================================
+# Get your API key from: https://platform.openai.com/api-keys
+# You'll need to add billing information for API usage
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Optional: OpenAI Organization ID (if you're part of an organization)
+# OPENAI_ORG_ID=your_org_id_here
+
+# =============================================================================
+# APPLICATION CONFIGURATION
+# =============================================================================
+# Base URL of your application
+# Development: http://localhost:3000
+# Production: https://your-domain.com
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# Environment mode
+NODE_ENV=development
+
+# =============================================================================
+# OPTIONAL: ANALYTICS & TRACKING
+# =============================================================================
+# Google Analytics 4 ID for tracking portfolio interactions
+# NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# PostHog for user analytics and feature flags
+# NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key
+# NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
+
+# Simple Analytics (privacy-focused alternative)
+# NEXT_PUBLIC_SA_DOMAIN=your-domain.com
+
+# =============================================================================
+# OPTIONAL: EXTERNAL INTEGRATIONS
+# =============================================================================
+# Calendly integration for meeting bookings
+# NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/your-username
+
+# FormSpree for contact form submissions
+# NEXT_PUBLIC_FORMSPREE_ENDPOINT=your_formspree_endpoint
+
+# Resend for email notifications when someone contacts you
+# RESEND_API_KEY=your_resend_api_key
+# RESEND_FROM_EMAIL=noreply@your-domain.com
+# RESEND_TO_EMAIL=your.email@example.com
+
+# GitHub API for displaying repository information
+# GITHUB_TOKEN=your_github_personal_access_token
+
+# =============================================================================
+# OPTIONAL: SECURITY & RATE LIMITING
+# =============================================================================
+# JWT secret for session management (generate a random 32+ character string)
+# JWT_SECRET=your_super_secret_jwt_key_here
+
+# Rate limiting for API endpoints
+# RATE_LIMIT_MAX_REQUESTS=100
+# RATE_LIMIT_WINDOW_MS=900000
+
+# CORS origins (comma-separated list)
+# CORS_ORIGINS=https://your-domain.com,https://www.your-domain.com
+
+# =============================================================================
+# OPTIONAL: DATABASE & CACHING
+# =============================================================================
+# PostgreSQL database for storing chat history and analytics
+# DATABASE_URL=postgresql://username:password@localhost:5432/portfolio_chatbot
+
+# Redis for caching OpenAI responses and rate limiting
+# REDIS_URL=redis://localhost:6379
+# REDIS_PASSWORD=your_redis_password
+
+# =============================================================================
+# OPTIONAL: SOCIAL MEDIA LINKS
+# =============================================================================
+# These can also be configured in portfolio-knowledge.ts
+# But environment variables take precedence for sensitive URLs
+# NEXT_PUBLIC_LINKEDIN_URL=https://linkedin.com/in/your-profile
+# NEXT_PUBLIC_GITHUB_URL=https://github.com/your-username
+# NEXT_PUBLIC_TWITTER_URL=https://twitter.com/your-username
+
+# =============================================================================
+# OPTIONAL: FEATURE FLAGS
+# =============================================================================
+# Enable/disable specific features
+# NEXT_PUBLIC_ENABLE_ANALYTICS=true
+# NEXT_PUBLIC_ENABLE_CONTACT_FORM=true
+# NEXT_PUBLIC_ENABLE_RESUME_DOWNLOAD=true
+# NEXT_PUBLIC_ENABLE_VOICE_INPUT=false
+# NEXT_PUBLIC_ENABLE_DARK_MODE=true
+# NEXT_PUBLIC_ENABLE_CHAT_HISTORY=false
+
+# =============================================================================
+# DEPLOYMENT SPECIFIC
+# =============================================================================
+# These are typically set automatically by hosting providers
+
+# Vercel (automatically set)
+# VERCEL=1
+# VERCEL_URL=your-app.vercel.app
+# VERCEL_GIT_COMMIT_SHA=abc123
+
+# Netlify (automatically set)
+# NETLIFY=1
+# DEPLOY_URL=https://deploy-preview-123--your-app.netlify.app
+
+# Custom domain
+# NEXT_PUBLIC_DOMAIN=your-custom-domain.com
+
+# =============================================================================
+# DEVELOPMENT SETTINGS
+# =============================================================================
+# Debug logging (set to 'portfolio:*' to enable all debug logs)
+# DEBUG=portfolio:*
+
+# Disable telemetry
+# NEXT_TELEMETRY_DISABLED=1
+
+# =============================================================================
+# QUICK SETUP GUIDE:
+# =============================================================================
+# 1. Copy this file:
+#    cp .env.example .env.local
+#
+# 2. Get OpenAI API Key:
+#    - Visit https://platform.openai.com/api-keys
+#    - Create new key and add billing info
+#    - Replace OPENAI_API_KEY value above
+#
+# 3. Update APP_URL:
+#    - Development: http://localhost:3000
+#    - Production: your actual domain
+#
+# 4. Optional: Add other integrations as needed
+#
+# 5. Test setup:
+#    npm run dev
+#    Visit http://localhost:3000
+#
+# =============================================================================
+# SECURITY NOTES:
+# =============================================================================
+# - Never commit .env.local to version control
+# - Use strong, unique values for JWT_SECRET
+# - Regularly rotate API keys
+# - Use environment-specific keys for dev/staging/prod
+# - Monitor API usage and set billing alerts
+# =============================================================================
