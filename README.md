@@ -170,6 +170,67 @@ module.exports = {
 }
 ```
 
+#### Change Background SVG
+Replace the background with your own custom SVG:
+
+1. **Add your SVG file** to `public/assets/background.svg`
+2. **Update the CSS** in `app/globals.css`:
+```css
+html {
+  background: url('/assets/your-background.svg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+```
+
+#### Customize Avatar Colors
+Change the avatar circle colors throughout the interface:
+
+1. **Header Avatar** - In `src/components/chat/ChatInterface.tsx`:
+```typescript
+backgroundColor: '#YOUR_COLOR' // Line ~756
+```
+
+2. **Message Avatars** - In the same file:
+```typescript
+backgroundColor: '#YOUR_COLOR' // Lines ~555 and ~585
+```
+
+3. **Button Colors** - In `app/globals.css`:
+```css
+.btn-primary {
+  background-color: #YOUR_COLOR;
+}
+```
+
+#### Add Your Resume
+Set up resume download functionality:
+
+1. **Add your resume file** to `public/assets/` folder:
+   - Replace `public/assets/my-resume.pdf` with your resume
+   - Or keep the same filename for no code changes
+
+2. **If using a different filename**, update the references in `src/components/chat/ChatInterface.tsx`:
+```typescript
+// Update the download path (lines ~713, ~714)
+link.href = '/assets/YOUR-RESUME-NAME.pdf';
+link.download = 'YOUR-RESUME-NAME.pdf';
+
+// Update button text (line ~855)
+text: "YOUR-RESUME-NAME.pdf",
+
+// Update other references (lines ~521, ~523, etc.)
+// Search for 'my-resume.pdf' and replace with your filename
+```
+
+3. **Update contact info** in `src/data/assistant-config.ts`:
+```typescript
+export const CONTACT_INFO = {
+  // ... other fields
+  resume: "/assets/YOUR-RESUME-NAME.pdf"
+};
+```
+
 ## 🚀 Deployment
 
 ### Deploy to Vercel (Recommended)

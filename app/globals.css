@@ -6,9 +6,31 @@
   --font-mono: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', 'Consolas', 'Courier New', monospace;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+html {
+  background: url('/assets/background.svg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #e7e7eb;
+  background: transparent;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 /* Chat Interface Styles */
@@ -17,7 +39,24 @@ body {
 }
 
 .btn-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+  background-color: #dac4e1;
+  color: #002226;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.btn-primary:hover {
+  background-color: #c9b3d1;
+}
+
+.btn-primary:focus {
+  ring: 2px;
+  ring-color: #dac4e1;
+  ring-offset: 2px;
 }
 
 .btn-secondary {

@@ -142,8 +142,21 @@ const ChatInterface = () => {
       };
     }
     
-    if (action in PROGRESSIVE_CONTENT.details) {
-      const content = PROGRESSIVE_CONTENT.details[action as keyof typeof PROGRESSIVE_CONTENT.details];
+    // Check if action exists in any of the progressive content sections
+    const allSections = {
+      ...PROGRESSIVE_CONTENT.overview,
+      ...PROGRESSIVE_CONTENT.experience_details,
+      ...PROGRESSIVE_CONTENT.about_details,
+      ...PROGRESSIVE_CONTENT.project_categories,
+      ...PROGRESSIVE_CONTENT.skills_breakdown,
+      ...PROGRESSIVE_CONTENT.current_role_deep,
+      ...PROGRESSIVE_CONTENT.project_1_details,
+      ...PROGRESSIVE_CONTENT.project_1_solution,
+      ...PROGRESSIVE_CONTENT.responsibility_examples
+    };
+    
+    if (action in allSections) {
+      const content = allSections[action as keyof typeof allSections];
       return {
         type: 'assistant',
         content: {
@@ -345,10 +358,10 @@ const ChatInterface = () => {
         }
         
         // Handle resume download if present
-        if (data.message.downloadUrl && data.message.downloadUrl.includes('BethanyRobertson_Designer_Resume_2025.pdf')) {
+        if (data.message.downloadUrl && data.message.downloadUrl.includes('my-resume.pdf')) {
           const link = document.createElement('a');
           link.href = data.message.downloadUrl;
-          link.download = 'BethanyRobertson_Designer_Resume_2025.pdf';
+          link.download = 'my-resume.pdf';
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -515,10 +528,10 @@ const ChatInterface = () => {
         }
         
         // Handle resume download if present
-        if (data.message.downloadUrl && data.message.downloadUrl.includes('BethanyRobertson_Designer_Resume_2025.pdf')) {
+        if (data.message.downloadUrl && data.message.downloadUrl.includes('my-resume.pdf')) {
           const link = document.createElement('a');
           link.href = data.message.downloadUrl;
-          link.download = 'BethanyRobertson_Designer_Resume_2025.pdf';
+          link.download = 'my-resume.pdf';
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -546,11 +559,16 @@ const ChatInterface = () => {
       return (
         <div key={index} className={`message ${message.type}-message`}>
           {message.type === 'assistant' && (
-            <div className="flex items-start gap-3">
-              <img 
-                src="/bethanybot.png" 
-                alt="Bethany" 
-                className="w-6 h-6 rounded-full flex-shrink-0 mt-1"
+            <div className="flex items-start gap-4">
+              <div
+                style={{
+                  width: '24px',
+                  height: '24px',
+                  borderRadius: '50%',
+                  backgroundColor: '#DAC4E1',
+                  flexShrink: 0,
+                  marginTop: '4px'
+                }}
               />
               
               <div className="message-content flex-1">
@@ -571,11 +589,16 @@ const ChatInterface = () => {
     return (
       <div key={index} className={`message ${message.type}-message`}>
         {message.type === 'assistant' && (
-          <div className="flex items-start gap-3">
-            <img 
-              src="/bethanybot.png" 
-              alt="Bethany" 
-              className="w-6 h-6 rounded-full flex-shrink-0 mt-1"
+          <div className="flex items-start gap-4">
+            <div
+              style={{
+                width: '24px',
+                height: '24px',
+                borderRadius: '50%',
+                backgroundColor: '#DAC4E1',
+                flexShrink: 0,
+                marginTop: '4px'
+              }}
             />
             
             <div className="message-content flex-1">
@@ -647,39 +670,58 @@ const ChatInterface = () => {
               <div className="contact-item">
                 <strong>Email:</strong> 
                 <a 
-                  href="mailto:bethany@bethanyrobertson.com" 
+                  href="mailto:hello@yourname.com" 
                   className="contact-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  bethany@bethanyrobertson.com
+                  hello@yourname.com
                 </a>
+              </div>
+              <div className="contact-item">
+                <strong>Phone:</strong> 
+                <span className="contact-text">+1 (555) 123-4567</span>
+              </div>
+              <div className="contact-item">
+                <strong>Location:</strong> 
+                <span className="contact-text">San Francisco, CA</span>
               </div>
               <div className="contact-item">
                 <strong>LinkedIn:</strong> 
                 <a 
-                  href="https://linkedin.com/in/bethany-robertson" 
+                  href="https://linkedin.com/in/your-linkedin-username" 
                   className="contact-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  linkedin.com/in/bethany-robertson
+                  linkedin.com/in/your-linkedin-username
                 </a>
               </div>
               <div className="contact-item">
                 <strong>Portfolio:</strong> 
                 <a 
-                  href="https://brober.xyz" 
+                  href="https://yourportfolio.com" 
                   className="contact-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  brober.xyz
+                  yourportfolio.com
+                </a>
+              </div>
+              <div className="contact-item">
+                <strong>Website:</strong> 
+                <a 
+                  href="https://yourwebsite.com" 
+                  className="contact-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  yourwebsite.com
                 </a>
               </div>
             </div>
             <div className="contact-note">
-              I'm always interested in discussing design challenges, new opportunities, or just connecting with fellow designers. Feel free to reach out!
+              I'm always interested in discussing new opportunities, design challenges, or just connecting with fellow professionals. Feel free to reach out!
             </div>
           </div>
         )}
@@ -691,15 +733,15 @@ const ChatInterface = () => {
               <button
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/assets/BethanyRobertson_Designer_Resume_2025.pdf';
-                  link.download = 'BethanyRobertson_Designer_Resume_2025.pdf';
+                  link.href = '/assets/my-resume.pdf';
+                  link.download = 'my-resume.pdf';
                   document.body.appendChild(link);
                   link.click();
                   document.body.removeChild(link);
                 }}
                 className="resume-download-btn"
               >
-                Download BethanyRobertson_Designer_Resume_2025.pdf
+                my-resume.pdf
               </button>
             </div>
             <div className="resume-note">
@@ -724,17 +766,11 @@ const ChatInterface = () => {
                 width: '36px',
                 height: '36px',
                 borderRadius: '50%',
-                backgroundColor: '#e5e7eb',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#6b7280'
+                backgroundColor: '#DAC4E1'
               }}
-            >
-              <LucideIcons.User size={20} />
-            </div>
+            />
           </div>
-          <div className="chat-title">Bethany</div>
+          <div className="chat-title">Name</div>
         </div>
         
         <Link href="#" className="more-about-link" onClick={(e) => {
@@ -833,7 +869,7 @@ const ChatInterface = () => {
             },
             {
               id: "btn_resume",
-              text: "Resume",
+              text: "my-resume.pdf",
               action: "DOWNLOAD_RESUME",
               variant: "primary" as const,
               linkType: "internal" as const

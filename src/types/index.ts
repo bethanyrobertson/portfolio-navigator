@@ -261,47 +261,8 @@ export interface AnalyticsEvent {
 }
 
 // =============================================================================
-// EXPORT MAIN TYPES FOR EASY IMPORTING
+// ALL TYPES ARE ALREADY EXPORTED ABOVE WITH THEIR INTERFACE/TYPE DECLARATIONS
 // =============================================================================
 
-// Configuration types
-export type {
-  ProgressiveContent,
-  ContactInfo,
-  ActionButton
-};
-
-// Portfolio data types  
-export type {
-  PersonalInfo,
-  WorkExperience,
-  Project,
-  TechnicalSkill,
-  DomainExpertise
-};
-
-// API types
-export type {
-  ChatMessage,
-  ChatRequest,
-  ChatResponse,
-  ProgressiveButton,
-  ChatAction
-};
-
-// Component types
-export type {
-  ChatInterfaceProps,
-  MessageBubbleProps,
-  ProgressiveButtonProps
-};
-
-// Utility types
-export type {
-  APIError,
-  ValidationResult,
-  SetupConfig,
-  EnvironmentConfig,
-  Theme,
-  AnalyticsEvent
-};
+// No need for re-export statements since all interfaces and types
+// are already exported when declared using 'export interface' or 'export type'

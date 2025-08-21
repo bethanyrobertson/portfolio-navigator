@@ -9,10 +9,7 @@ const PortfolioNavigator = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   return (
-    <div
-      className="flex w-full h-screen justify-center items-center overflow-hidden relative pt-20"
-      ref={containerRef}
-    >
+    <div ref={containerRef}>
       <HomePageChat />
     </div>
   )

@@ -227,7 +227,7 @@ What would you like to explore?`;
 
 // Fallback sample responses when portfolio data contains placeholders
 function getSampleResponse(type: string): string {
-  const responses = {
+  const responses: Record<string, string> = {
     project: `Here are some sample projects to demonstrate the chat functionality:
 
 **E-commerce Platform Redesign**

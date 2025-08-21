@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="201" viewBox="0 0 300 201" fill="none">
+  <g filter="url(#filter0_n_221_28543)">
+    <rect width="300" height="201" fill="#E7E7EB"/>
+    <rect width="300" height="201" fill="url(#paint0_linear_221_28543)"/>
+  </g>
+  <defs>
+    <filter id="filter0_n_221_28543" x="0" y="0" width="300" height="201" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feTurbulence type="fractalNoise" baseFrequency="3.3333332538604736 3.3333332538604736" stitchTiles="stitch" numOctaves="3" result="noise" seed="4842"/>
+      <feComponentTransfer in="noise" result="coloredNoise1">
+        <feFuncR type="linear" slope="2" intercept="-0.5"/>
+        <feFuncG type="linear" slope="2" intercept="-0.5"/>
+        <feFuncB type="linear" slope="2" intercept="-0.5"/>
+        <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+      </feComponentTransfer>
+      <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+      <feComponentTransfer in="noise1Clipped" result="color1">
+        <feFuncA type="table" tableValues="0 0.15"/>
+      </feComponentTransfer>
+      <feMerge result="effect1_noise_221_28543">
+        <feMergeNode in="shape"/>
+        <feMergeNode in="color1"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="paint0_linear_221_28543" x1="147.5" y1="-24" x2="160" y2="252" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0718929" stop-color="#E7E7EB"/>
+      <stop offset="0.187106" stop-color="#E7E7EB" stop-opacity="0.2"/>
+      <stop offset="0.206495" stop-color="#E7E7EB"/>
+      <stop offset="0.235913" stop-color="#E7E7EB" stop-opacity="0.5"/>
+      <stop offset="0.31037" stop-color="#D2D0D5" stop-opacity="0.26225"/>
+      <stop offset="0.539638" stop-color="#A6A5C4" stop-opacity="0.6"/>
+      <stop offset="0.727658" stop-color="#A6A5C4"/>
+    </linearGradient>
+  </defs>
+</svg>

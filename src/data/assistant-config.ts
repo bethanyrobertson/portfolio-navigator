@@ -66,6 +66,12 @@ export const PROGRESSIVE_CONTENT = {
       description: "[Your educational and career background - e.g., 'Computer Science degree, transitioned from engineering to design']",
       buttonText: "Tell me your background",
       nextLevel: "background_details"
+    },
+    about: {
+      title: "About Me",
+      description: "Learn about my background, interests, and what drives my work in design and development",
+      buttonText: "Tell me about yourself",
+      nextLevel: "about_details"
     }
   },
 
@@ -88,6 +94,27 @@ export const PROGRESSIVE_CONTENT = {
       description: "[Your most significant professional accomplishments]",
       buttonText: "Major achievements",
       nextLevel: "achievement_details"
+    }
+  },
+
+  about_details: {
+    personal: {
+      title: "Personal Background",
+      description: "My journey into design and technology, what motivates me, and my approach to problem-solving",
+      buttonText: "Personal story",
+      nextLevel: "personal_deep"
+    },
+    values: {
+      title: "Values & Philosophy",
+      description: "The principles that guide my work and how I approach design challenges",
+      buttonText: "My values",
+      nextLevel: "values_deep"
+    },
+    interests: {
+      title: "Interests & Hobbies",
+      description: "What I enjoy outside of work and how it influences my creative process",
+      buttonText: "Personal interests",
+      nextLevel: "interests_deep"
     }
   },
 
@@ -216,11 +243,14 @@ export const PROGRESSIVE_CONTENT = {
 
 // Contact and action buttons
 export const CONTACT_INFO = {
-  email: "[INSERT_YOUR_EMAIL]",
-  linkedin: "[INSERT_YOUR_LINKEDIN_USERNAME]", 
-  github: "[INSERT_YOUR_GITHUB_USERNAME]", // if applicable
-  portfolio: "[INSERT_YOUR_PORTFOLIO_URL]", // if you have a separate portfolio site
-  resume: "/assets/[INSERT_YOUR_NAME]_Resume.pdf" // Path to your resume file
+  email: "hello@yourname.com",
+  phone: "+1 (555) 123-4567",
+  location: "San Francisco, CA",
+  linkedin: "your-linkedin-username", 
+  github: "your-github-username", // if applicable
+  portfolio: "https://yourportfolio.com", // if you have a separate portfolio site
+  resume: "/assets/my-resume.pdf", // Path to your resume file
+  website: "https://yourwebsite.com"
 };
 
 export const ACTION_BUTTONS = {

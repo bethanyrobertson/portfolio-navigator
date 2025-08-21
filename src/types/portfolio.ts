@@ -430,31 +430,8 @@ export interface Theme {
 }
 
 // =============================================================================
-// EXPORT ALL TYPES
+// ALL TYPES ARE ALREADY EXPORTED ABOVE WITH THEIR INTERFACE/TYPE DECLARATIONS
 // =============================================================================
 
-export type {
-  // Main configuration types
-  AssistantConfig,
-  PortfolioKnowledge,
-  ConversationGuidance,
-  
-  // Component types
-  ChatInterfaceProps,
-  MessageBubbleProps,
-  ProgressiveButtonProps,
-  ActionButtonProps,
-  
-  // API types
-  ChatMessage,
-  ChatRequest,
-  ChatResponse,
-  APIError,
-  
-  // Utility types
-  ValidationResult,
-  SetupConfig,
-  AnalyticsEvent,
-  DeploymentConfig,
-  Theme
-};
+// No need for re-export statements since all interfaces and types
+// are already exported when declared using 'export interface' or 'export type'
