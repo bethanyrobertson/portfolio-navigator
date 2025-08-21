@@ -1,8 +1,8 @@
-# 🤖 AI Portfolio Chatbot
+# AI Portfolio Chatbot
 
 An intelligent, conversational portfolio website powered by progressive disclosure and OpenAI. Let visitors explore your experience through natural conversations instead of traditional navigation.
+![Scene-1 (19)](https://github.com/user-attachments/assets/b2df7b0e-eaa2-4dcb-b8f4-34635bacd9b1)
 
-![AI Portfolio Demo](https://via.placeholder.com/800x400/4f46e5/ffffff?text=AI+Portfolio+Chatbot+Demo)
 
 ## ✨ Features
 
@@ -69,6 +69,10 @@ cp src/data/examples/example-portfolio-knowledge.ts src/data/portfolio-knowledge
 # Fill in your projects, experience, and skills
 # This is where all your portfolio content lives
 ```
+
+![Scene-1 (18)](https://github.com/user-attachments/assets/a7fb67c2-ea28-466d-9316-34c79e898fd9)
+
+<img width="230" height="98" alt="Screenshot 2025-08-21 at 6 14 39 PM" src="https://github.com/user-attachments/assets/e3df67bb-c317-4f8b-af9e-39179e1f303a" />
 
 #### Add Your Assets
 ```bash
@@ -437,15 +441,6 @@ const cachedResponse = await redis.get(`chat:${messageHash}`);
 if (cachedResponse) return cachedResponse;
 ```
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-
 ## 🙏 Acknowledgments
 
 - [OpenAI](https://openai.com) for the GPT-4 API
@@ -454,7 +449,6 @@ if (cachedResponse) return cachedResponse;
 - [Radix UI](https://radix-ui.com) for accessible components
 
 ## 📞 Support
-
 - 📧 **Email**: bethany@bethanyrobertson.com
 
 ---
