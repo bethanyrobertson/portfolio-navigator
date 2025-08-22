@@ -6,22 +6,21 @@ An intelligent, conversational portfolio website powered by progressive disclosu
 
 ## ✨ Features
 
-- **🧠 AI-Powered Conversations** - OpenAI integration for dynamic, personalized responses
-- **📚 Progressive Disclosure** - 4-level conversation system (Overview → Details → Deep Dive → Granular)
-- **📱 Mobile-Responsive** - Optimized chat interface for all devices
-- **⚡ Lightning Fast** - Built with Next.js 15 and React 19
-- **🎨 Beautiful UI** - Modern design with Tailwind CSS and Framer Motion
-- **🔧 Easy Customization** - Single configuration file for all content
-- **🚀 One-Click Deploy** - Ready for Vercel deployment
+- ** AI-Powered Conversations** - OpenAI integration for dynamic, personalized responses
+- ** Progressive Disclosure** - 4-level conversation system (Overview → Details → Deep Dive → Granular)
+- ** Mobile-Responsive** - Optimized chat interface for all devices
+- ** Lightning Fast** - Built with Next.js 15 and React 19
+- ** Easy Customization** - Single configuration file for all content
+- ** One-Click Deploy** - Ready for Vercel deployment
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 - **Frontend**: Next.js 15, React 19, TypeScript
 - **Styling**: Tailwind CSS, Radix UI, Framer Motion
 - **AI**: OpenAI GPT-4
 - **Deployment**: Vercel (recommended)
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -102,7 +101,7 @@ npm run validate
 curl http://localhost:3000/api/chat
 ```
 
-## 📝 Customization Guide
+## Customization Guide
 
 ### Content Structure
 
@@ -235,7 +234,7 @@ export const CONTACT_INFO = {
 };
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Deploy to Vercel (Recommended)
 
@@ -281,7 +280,7 @@ npm run build
 npm start
 ```
 
-## 🛠️ Development
+##  Development
 
 ### Project Structure
 ```
@@ -305,9 +304,8 @@ ai-portfolio-chatbot/
 │   └── types/                   # TypeScript type definitions
 ├── public/
 │   ├── assets/                  # Images, resume, etc.
-│   └── icons/                   # Icon files
 ├── scripts/
-│   ├── setup.js                 # Setup automation
+│   ├── quick-setup.js           # Setup automation
 │   └── validate-content.js      # Content validation
 └── docs/                        # Additional documentation
 ```
@@ -342,7 +340,7 @@ Common validation issues:
 - Incorrect file paths for assets
 - Missing required fields in portfolio knowledge
 
-## 🎯 Use Cases
+## Use Cases
 
 Perfect for:
 - **UX/UI Designers** - Showcase design process and case studies
@@ -351,7 +349,7 @@ Perfect for:
 - **Startup Founders** - Share entrepreneurial journey and ventures
 - **Creative Professionals** - Display portfolio work interactively
 
-## 📚 Advanced Features
+## Advanced Features
 
 ### Custom Integrations
 
@@ -392,7 +390,7 @@ export const LOCALIZED_CONTENT = {
 };
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
