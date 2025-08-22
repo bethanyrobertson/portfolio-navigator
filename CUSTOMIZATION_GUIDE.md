@@ -1,5 +1,21 @@
 # Portfolio Navigator Customization Guide
 
+
+## Tips for color and UI:
+
+You can easily implement backgrounds from https://patterncraft.fun/
+
+Want a glass texture for your chat? https://glass3d.dev/
+
+Amazing resources for animations, backgrounds, and more: https://www.cult-ui.com/
+https://reactbits.dev/
+https://www.kibo-ui.com/
+https://21st.dev/home
+
+
+Specifically for chat interfaces: https://www.prompt-kit.com/
+
+
 ## Quick Updates
 
 ### 1. Update "More About Me" Link
