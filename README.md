@@ -33,7 +33,7 @@ An intelligent, conversational portfolio website powered by progressive disclosu
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ai-portfolio-chatbot.git
+git clone https://github.com/bethanyrobertson/portfolio-navigator.git
 cd ai-portfolio-chatbot
 
 # Install dependencies
@@ -64,7 +64,7 @@ cp src/data/examples/example-assistant-config.ts src/data/assistant-config.ts
 #### Add Your Portfolio Knowledge
 ```bash
 # Copy the template  
-cp src/data/examples/example-portfolio-knowledge.ts src/data/portfolio-knowledge.ts
+cp src/data/portfolio-knowledge.ts
 
 # Fill in your projects, experience, and skills
 # This is where all your portfolio content lives
